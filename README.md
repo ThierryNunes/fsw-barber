@@ -49,6 +49,21 @@ install -> npm i -D ts-node
 run -> npx prisma db seed
 ```
 
+## Prettier with tailwindcss
+
+First run install
+
+```bash
+npm install -D prettier prettier-plugin-tailwindcss
+
+create on root prettierrc.json, paste in
+{
+  "plugins": ["prettier-plugin-tailwindcss"],
+  "tabWidth": 2,
+  "semi": false
+}
+```
+
 ## GIT Hooks
 
 ```bash
@@ -56,14 +71,14 @@ npm i -D husky lint-staged git-commit-msg-linter
 
 npx husky init
 
-Dentro da pasta .husky alterar o pre-commit: npx lint-staged
+Inside the folder .husky change file pre-commit paste in: npx lint-staged
 
-Criar o arquivo .lintstagederc.json colar dentro:
+Create on root .lintstagederc.json, paste in
 {
 "*.ts?(x)": ["eslint --fix", "prettier --write"]
 }
 
-- Para travar prefixos no commit, criar arquivo dentro da pasta .husky: commit-msg
-  colar dentro do arquivo:
+- Create inside folder .husky -> commit-msg
+  paste in:
   .git/hooks/commit-mgs $1
 ```
