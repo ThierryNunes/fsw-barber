@@ -1,5 +1,9 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Create Project
+
+npx create-next-app@14 project-name
+
 ## Getting Started
 
 First, run the development server:
@@ -20,18 +24,34 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Create Project
+## Prisma config using MySQL
 
-npx create-next-app@14 project-name
+First, run the install
 
-## Prisma install using MySQL
-
+```bash
 npm i prisma@5.17.0 --save-dev
+
 npm i @prisma/client @prisma/adapter-mariadb dotenv
+
 npx prisma init --datasource-provider mysql
+```
 
-# GIT Hooks
+To run seeds, needs to:
 
+```bash
+add to package.json ->
+"prisma": {
+    "seed": "ts-node prisma/seed.ts"
+}
+
+install -> npm i -D ts-node
+
+run -> npx prisma db seed
+```
+
+## GIT Hooks
+
+```bash
 npm i -D husky lint-staged git-commit-msg-linter
 
 npx husky init
@@ -40,9 +60,10 @@ Dentro da pasta .husky alterar o pre-commit: npx lint-staged
 
 Criar o arquivo .lintstagederc.json colar dentro:
 {
-"\*.ts?(x)": ["eslint --fix", "prettier --write"]
+"*.ts?(x)": ["eslint --fix", "prettier --write"]
 }
 
 - Para travar prefixos no commit, criar arquivo dentro da pasta .husky: commit-msg
   colar dentro do arquivo:
   .git/hooks/commit-mgs $1
+```

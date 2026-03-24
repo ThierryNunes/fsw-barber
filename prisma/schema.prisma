@@ -40,10 +40,10 @@ model BarbershopService {
 }
 
 model BarbershopPhone {
-  id           Int         @id @default(autoincrement())
+  id           Int        @id @default(autoincrement())
   phone        String
   barbershopId String
-  barbershop   Barbershop? @relation(fields: [barbershopId], references: [id])
+  barbershop   Barbershop @relation(fields: [barbershopId], references: [id])
 }
 
 model Booking {
