@@ -56,7 +56,7 @@ First run install
 ```bash
 npm install -D prettier prettier-plugin-tailwindcss
 
-create on root prettierrc.json, paste in
+Create on root prettierrc.json, paste in
 {
   "plugins": ["prettier-plugin-tailwindcss"],
   "tabWidth": 2,

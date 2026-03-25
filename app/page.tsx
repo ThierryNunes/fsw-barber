@@ -1,7 +1,7 @@
 export default function Home() {
   return (
-    <div>
-      <h1 className="py-4 text-red-500">red text</h1>
+    <div className="bg-red-500">
+      <h1 className="py-4 text-blue-500">hello world</h1>
     </div>
   )
 }
