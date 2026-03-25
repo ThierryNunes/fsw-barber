@@ -4,6 +4,7 @@ import { Button } from "./_components/ui/button";
 import { SearchIcon } from "lucide-react";
 import { quickSearchOptions } from "./_constants/search";
 import Image from "next/image";
+import BookingItem from "./_components/booking-item";
 
 const Home = () => {
   return (
@@ -47,6 +48,9 @@ const Home = () => {
             fill
           />
         </div>
+
+        {/* AGENDAMENTO */}
+        <BookingItem />
 
         {/* RECOMENDADOS */}
         <h2 className="mb-3 mt-6 text-xs font-bold uppercase text-gray-400">
