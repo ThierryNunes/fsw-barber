@@ -2,7 +2,7 @@ import Header from "./_components/header";
 import { Input } from "./_components/ui/input";
 import { Button } from "./_components/ui/button";
 import { SearchIcon } from "lucide-react";
-import { quickSearchOptions } from "./_constants/search";
+import { quickSearchOptions } from "./_constants/constants";
 import Image from "next/image";
 import BookingItem from "./_components/booking-item";
 import { db } from "./_lib/prisma";

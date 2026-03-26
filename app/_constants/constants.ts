@@ -29,3 +29,10 @@ export const quickSearchOptions: QuickSearchOption[] = [
     title: "Hidratação",
   },
 ];
+
+export const formatPrice = (price: number): string => {
+  return Intl.NumberFormat("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  }).format(price);
+};
