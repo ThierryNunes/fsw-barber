@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { Button } from "./ui/button";
 import { SheetClose, SheetContent, SheetHeader, SheetTitle } from "./ui/sheet";
-import { CalendarIcon, HomeIcon, LogOutIcon } from "lucide-react";
+import { CalendarIcon, HomeIcon, LogInIcon, LogOutIcon } from "lucide-react";
 import { quickSearchOptions } from "../_constants/constants";
 import Image from "next/image";
 import { Avatar, AvatarImage } from "./ui/avatar";
+import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
+import SignInDialog from "./sign-in-dialog";
 
 const SidebarSheet = () => {
   return (
@@ -25,7 +27,7 @@ const SidebarSheet = () => {
           </div>
         </div>
 
-        {/* <h2 className="font-bold">Olá, faça seu login!</h2>
+        <h2 className="font-bold">Olá, faça seu login!</h2>
         <Dialog>
           <DialogTrigger asChild>
             <Button size="icon">
@@ -35,7 +37,7 @@ const SidebarSheet = () => {
           <DialogContent className="w-[90%]">
             <SignInDialog />
           </DialogContent>
-        </Dialog> */}
+        </Dialog>
       </div>
 
       <div className="flex flex-col gap-2 border-b border-solid py-5">
