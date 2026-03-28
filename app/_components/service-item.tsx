@@ -85,9 +85,6 @@ const getTimeList = ({ bookings, selectedDay }: GetTimeListProps) => {
 const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
   const { data } = useSession();
   const router = useRouter();
-
-  const today = new Date();
-
   const [signInDialogIsOpen, setSignInDialogIsOpen] = useState(false);
   const [selectedDay, setSelectedDay] = useState<Date | undefined>(undefined);
   const [selectedTime, setSelectedTime] = useState<string | undefined>(
@@ -220,7 +217,12 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
                       selected={selectedDay}
                       onSelect={handleDateSelect}
                       locale={ptBR}
-                      disabled={{ before: today }}
+                      // Desabilita dias passados, sabado e domingo
+                      disabled={(date) =>
+                        (isPast(date) && !isToday(date)) ||
+                        date.getDay() === 0 ||
+                        date.getDay() === 6
+                      }
                     />
                   </div>
 
