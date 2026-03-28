@@ -20,7 +20,11 @@ const Bookings = async () => {
     include: {
       service: {
         include: {
-          barbershop: true,
+          barbershop: {
+            include: {
+              phones: true,
+            },
+          },
         },
       },
     },
@@ -40,7 +44,11 @@ const Bookings = async () => {
     include: {
       service: {
         include: {
-          barbershop: true,
+          barbershop: {
+            include: {
+              phones: true,
+            },
+          },
         },
       },
     },
